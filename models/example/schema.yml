@@ -1,21 +1,20 @@
-
 version: 2
 
+sources:
+  - name: adatsiv_us
+    schema: adatsiv_us
+    tables:
+      - name: week5_hits
+        description: "Hit-level log data"
+      - name: week5_web_visits
+        description: "Visit-level data"
+      - name: week5_web_transactions
+        description: "Transaction-level data"
 models:
-  - name: my_first_dbt_model
-    description: "A starter dbt model"
+  - name: fct_landing_page
+    description: "The first page hit per visit (landing page)"
     columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
-
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
+      - name: visitId
+        description: "Unique ID for a visit"
+      - name: page
+        description: "First page visited during the session"
