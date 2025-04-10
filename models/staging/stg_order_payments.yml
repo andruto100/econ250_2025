@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_order_payments
+    description: "Payments made for each order, including value and type"
+    columns:
+      - name: order_id
+        description: "Reference to the order"
+        tests: [not_null]
+      - name: payment_type
+        description: "Type of payment (credit card, boleto, etc.)"

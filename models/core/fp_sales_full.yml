@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: fp_sales_full
+    description: "Integrated model combining order, payment, review, product, and customer data"
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests: [not_null]
+      - name: order_purchase_ts
+        description: "Timestamp when the order was placed"
+      - name: total_payment_value
+        description: "Sum of all payments for this order"

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "Product catalog including categories and dimensions"
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+      - name: product_category_name
+        description: "Original Portuguese category name"

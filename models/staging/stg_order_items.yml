@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_order_items
+    description: "Order item-level data including price and shipping limit"
+    columns:
+      - name: order_id
+        description: "Foreign key referencing the order"
+        tests: [not_null]
+      - name: order_item_id
+        description: "The index of the item within the order"
+        tests: [not_null]
+      - name: product_id
+        description: "ID of the product"
+      - name: seller_id
+        description: "ID of the seller who fulfilled the item"
+      - name: shipping_limit_ts
+        description: "Timestamp by which the item had to be shipped"
+      - name: price
+        description: "Price of the item"
+      - name: freight_value
+        description: "Shipping cost"

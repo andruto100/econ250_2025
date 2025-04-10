@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: adatsiv_us
+    database: econ250-2025
+    schema: adatsiv_us
+    tables:
+      - name: fp_orders
+        description: "Orders table"
+        columns:
+          - name: order_id
+            tests: [unique, not_null]
+      - name: fp_customers
+        description: "Customer table"
+        columns:
+          - name: customer_id
+            tests: [unique, not_null]
+          - name: customer_city
+          - name: customer_state
+      - name: fp_order_items
+        description: "Order item data from Olist"
+        columns:
+          - name: order_id
+            tests: [ not_null ]
+          - name: order_item_id
+      - name: fp_order_payments
+        description: "Payments table"
+        columns:
+          - name: order_id
+            tests: [ not_null ]
+      - name: fp_products
+        description: "Product details including size and category"
+        columns:
+          - name: product_id
+            tests: [ unique, not_null ]
+      - name: fp_product_category_name_translation
+        description: "Mapping of Portuguese product category names to English"
+        columns:
+          - name: product_category_name
+          - name: product_category_name_english
+      - name: fp_order_reviews
+        description: "Customer feedback and rating info"
+        columns:
+          - name: review_id
+            tests: [ unique, not_null ]
+          - name: order_id
+          - name: review_score
+      - name: fp_sellers
+        description: "Seller registry with zip, city, and state"
+        columns:
+          - name: seller_id
+            tests: [ unique, not_null ]

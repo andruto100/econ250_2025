@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_order_reviews
+    description: "Customer review scores and comments"
+    columns:
+      - name: review_id
+        tests: [unique, not_null]
+      - name: order_id
+        tests: [not_null]
+      - name: review_score
+        description: "Score from 1 to 5"

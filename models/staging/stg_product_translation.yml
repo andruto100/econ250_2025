@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: stg_product_translation
+    description: "Translation of product categories from Portuguese to English"
+    columns:
+      - name: product_category_name
+        tests: [not_null]
+      - name: product_category_name_english

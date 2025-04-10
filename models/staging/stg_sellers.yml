@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_sellers
+    description: "Seller IDs and their location info"
+    columns:
+      - name: seller_id
+        tests: [unique, not_null]
+      - name: seller_city
+      - name: seller_state

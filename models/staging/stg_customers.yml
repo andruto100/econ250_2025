@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Customer table cleaned and selected"
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+
+  - name: fp_customers
+    description: "Customer data including location and unique identifiers."
+    columns:
+      - name: customer_id
+        description: "Unique ID of the customer."
+        tests: [ unique, not_null ]
+      - name: customer_unique_id
+        description: "Public identifier used across multiple orders."
+      - name: customer_city
+        description: "City of the customer."
+      - name: customer_state
+        description: "State of the customer."
