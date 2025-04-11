@@ -6,7 +6,7 @@ models:
     columns:
       - name: order_id
         description: "Foreign key referencing the order"
-        tests: [not_null]
+        tests: [unique, not_null]
       - name: order_item_id
         description: "The index of the item within the order"
         tests: [not_null]

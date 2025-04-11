@@ -5,7 +5,7 @@ models:
     description: "Cleaned and enriched orders table with timestamps and delivery duration"
     columns:
       - name: order_id
-        tests: [not_null]
+        tests: [unique, not_null]
       - name: customer_id
         tests: [not_null]
       - name: order_purchase_ts

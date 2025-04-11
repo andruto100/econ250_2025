@@ -6,6 +6,6 @@ models:
     columns:
       - name: order_id
         description: "Reference to the order"
-        tests: [not_null]
+        tests: [unique, not_null]
       - name: payment_type
         description: "Type of payment (credit card, boleto, etc.)"
