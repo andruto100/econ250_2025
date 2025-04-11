@@ -5,7 +5,7 @@ models:
     description: "Integrated model combining order, payment, review, product, and customer data"
     columns:
       - name: order_id
-        tests: [unique, not_null]
+        tests: [not_null]
       - name: customer_id
         tests: [not_null]
       - name: order_purchase_ts

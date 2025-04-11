@@ -1,15 +1,19 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
-with source as (
-  select * from {{ source('adatsiv_us', 'fp_order_reviews') }}
+with raw_reviews as (
+    select
+        review_id,
+        order_id,
+        review_score,
+        review_creation_date
+    from {{ source('adatsiv_us', 'fp_order_reviews') }}
+    where order_id is not null
+      and review_id is not null
 )
 
 select
-  review_id,
-  order_id,
-  review_score,
-  review_comment_title,
-  review_comment_message,
-  cast(review_creation_date as date) as review_creation_date,
-  cast(review_answer_timestamp as timestamp) as review_answer_ts
-from source
+    review_id,
+    order_id,
+    review_score,
+    review_creation_date
+from raw_reviews
